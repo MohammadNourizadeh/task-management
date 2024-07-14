@@ -11,18 +11,18 @@ type TaskFormProps = {
 
 export default function TaskForm({ onCancel }: TaskFormProps) {
     // refHooks
-    const taskNameRef = useRef()
-    const taskDateRef = useRef()
-    const isImportantRef = useRef()
+    const taskNameRef = useRef<HTMLInputElement>()
+    const taskDateRef = useRef<HTMLInputElement>()
+    const isImportantRef = useRef<HTMLInputElement>()
 
     // redux
     const dispatch = useDispatch()
 
     // func
     const addTaskHandler = () => {
-        const taskName = taskNameRef.current.value;
-        const taskDate = taskDateRef.current.value;
-        const isImportant = isImportantRef.current.value;
+        const taskName = taskNameRef.current?.value;
+        const taskDate = taskDateRef.current?.value;
+        const isImportant = isImportantRef.current?.value;
         dispatch(addTask({ taskName, taskDate, isImportant }));
         onCancel(false)
     }
