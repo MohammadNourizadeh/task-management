@@ -20,12 +20,13 @@ export default function TaskForm({ onCancel }: TaskFormProps) {
 
     // func
     const addTaskHandler = () => {
-        dispatch(addTask({ taskName, taskDate, isImportant })); onCancel(false)
+        dispatch(addTask({ taskName, taskDate, isImportant }));
+        onCancel(false)
     }
 
 
     return (
-        <div className={styles.king}>
+        <form className={styles.king} onSubmit={addTaskHandler}>
             <div className={styles.textInputContainer}>
                 <label htmlFor="taskName">enter the task :</label>
                 <input type="text" id='taskName' name='taskName' value={taskName} onChange={(e) => { setTaskName(e.target.value) }} />
@@ -45,12 +46,12 @@ export default function TaskForm({ onCancel }: TaskFormProps) {
             <hr />
 
             <div className={styles.btnContainer}>
-                <button onClick={addTaskHandler}>add a task</button>
+                <button type='submit'>add a task</button>
             </div>
 
             <button className={styles.multiplyIconContainer} onClick={() => { onCancel(false) }}>
                 <FontAwesomeIcon icon={faMultiply} />
             </button>
-        </div>
+        </form>
     )
 }
