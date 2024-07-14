@@ -1,0 +1,52 @@
+@use "../../../../../../../../assets/style/index.scss";
+
+.dropDownItem {
+  padding: 0px 30px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+
+  .iconContainer {
+    margin-right: 20px;
+    color: index.$darkMode_text_color;
+  }
+
+  .itemNameContainer {
+    text-transform: none;
+  }
+
+  input[type="text"] {
+    width: 50%;
+    padding: 5px;
+    border-radius: 10px;
+    border: 2px solid index.$darkMode_border_color;
+    background-color: index.$darkMode_part_bg_color;
+    color: index.$darkMode_text_color;
+    text-transform: none;
+
+    &:focus {
+      outline: 2px solid index.$green_accepted_color;
+    }
+  }
+
+  .btnContainer {
+    margin-left: auto;
+
+    button {
+      padding: 5px 18px;
+      border-radius: 10px;
+      background-color: index.$green_accepted_color;
+      border: 0;
+      color: index.$darkMode_text_color;
+      cursor: pointer;
+      transition: 0.05s ease-in-out;
+
+      &:hover {
+        background-color: #238637c9;
+      }
+      &:active {
+        background-color: #238637a5;
+      }
+    }
+  }
+}

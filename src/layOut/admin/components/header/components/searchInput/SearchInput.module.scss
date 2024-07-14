@@ -1,0 +1,38 @@
+@use "../../../../../../assets/style/index.scss";
+
+.king {
+  position: relative;
+
+  input {
+    padding: 10px;
+    height: 55px;
+    width: 250px;
+    border-radius: 10px;
+    border: 2px solid index.$darkMode_border_color;
+    background-color: index.$darkMode_part_bg_color;
+    color: index.$darkMode_text_color;
+    text-transform: none;
+
+    &:focus {
+      outline: 2px solid index.$green_accepted_color;
+    }
+  }
+
+  button {
+    position: absolute;
+    right: 10px;
+    top: calc(50% - 8.8px);
+    font-size: 1.1rem;
+    color: index.$darkMode_text_color;
+    background-color: rgba(0, 0, 0, 0);
+    border: 0;
+    cursor: pointer;
+
+    &:hover {
+      color: rgba(255, 255, 255, 0.597);
+    }
+    &:active {
+      color: rgba(255, 255, 255, 0.447);
+    }
+  }
+}

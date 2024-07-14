@@ -1,0 +1,31 @@
+@use "../../../../../../assets/style/index.scss";
+
+.sidebarItem {
+  cursor: pointer;
+  padding: 20px 10px;
+  text-decoration: none;
+  transition: 0.04s ease-in-out;
+  &:hover {
+    background-color: index.$darkMode_border_color;
+  }
+
+  .iconContainer {
+    margin-right: 20px;
+    color: rgb(51, 139, 246);
+  }
+
+  .itemNameContainer {
+    color: index.$darkMode_text_color;
+  }
+}
+
+.dropDownContainer {
+  background-color: index.$darkMode_border_color;
+  color: index.$darkMode_text_color;
+  list-style: none;
+}
+
+// style of focused item
+#focused {
+  background-color: index.$darkMode_border_color;
+}

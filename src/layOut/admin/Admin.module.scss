@@ -1,0 +1,30 @@
+@use "../../assets/style/index.scss";
+
+.king {
+  height: 100vh;
+  display: flex;
+
+  .sideBarContainer {
+    border-right: 1px solid index.$darkMode_border_color;
+    width: 20%;
+    background-color: index.$darkMode_part_bg_color;
+    color: index.$darkMode_text_color;
+  }
+  .outletAndHeaderContainer {
+    height: 100%;
+    width: 80%;
+
+    .headerContainer {
+      color: index.$darkMode_text_color;
+      background-color: index.$darkMode_main_bg_color;
+      height: 35%;
+      padding: 20px;
+    }
+    .outletContainer {
+      height: 65%;
+      background-color: index.$darkMode_part_bg_color;
+      color: index.$darkMode_text_color;
+      overflow: auto;
+    }
+  }
+}

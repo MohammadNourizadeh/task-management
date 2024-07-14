@@ -1,0 +1,25 @@
+.king {
+  display: flex;
+  align-items: flex-end;
+  height: 100%;
+
+  .headerInfoContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+
+    .pageNameAndDateInfoContainer {
+      .pageNameContainer {
+        font-size: 5rem;
+        font-family: "Brush Script MT", cursive;
+        user-select: none;
+        margin-bottom: 10px;
+      }
+
+      .dateInfoContainer {
+        font-size: 1.3rem;
+      }
+    }
+  }
+}

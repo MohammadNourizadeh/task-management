@@ -1,0 +1,105 @@
+@use "../../../../assets/style/index.scss";
+
+.king {
+  padding: 30px;
+  background-color: index.$darkMode_main_bg_color;
+  border: 1px solid index.$darkMode_border_color;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  position: relative;
+
+  div,
+  hr {
+    width: 100%;
+  }
+
+  .textInputContainer,
+  .dateInputContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    input {
+      padding: 8px;
+      width: 250px;
+      background-color: index.$darkMode_part_bg_color;
+      border: 1px solid index.$darkMode_border_color;
+      border-radius: 10px;
+      color: index.$darkMode_text_color;
+      text-transform: none;
+
+      &:focus {
+        outline: 2px solid index.$green_accepted_color;
+      }
+    }
+
+    input[type="date"] {
+      cursor: pointer;
+    }
+  }
+  .selectContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    select {
+      padding: 8px;
+      background-color: index.$darkMode_part_bg_color;
+      border: 1px solid index.$darkMode_border_color;
+      border-radius: 10px;
+      color: index.$darkMode_text_color;
+      cursor: pointer;
+
+      &:focus {
+        outline: 2px solid index.$green_accepted_color;
+      }
+    }
+  }
+
+  .btnContainer {
+    display: flex;
+    justify-content: center;
+
+    button {
+      width: 50%;
+      padding: 10px;
+      border-radius: 30px;
+      border: 0;
+      cursor: pointer;
+      background-color: index.$green_accepted_color;
+      color: index.$darkMode_text_color;
+      text-transform: lowercase;
+      font-size: 1rem;
+      transition: 0.05s ease-in-out;
+
+      &:hover {
+        background-color: #238637c9;
+      }
+      &:active {
+        background-color: #238637a5;
+      }
+    }
+  }
+
+  .multiplyIconContainer {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    background-color: rgba(0, 0, 0, 0);
+    color: index.$red_error_color;
+    border: 0;
+    cursor: pointer;
+    font-size: 1rem;
+
+    &:hover {
+      color: rgba(204, 6, 6, 0.723);
+    }
+    &:active {
+      color: rgba(204, 6, 6, 0.555);
+    }
+  }
+}

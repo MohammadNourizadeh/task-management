@@ -1,0 +1,19 @@
+.king {
+  padding: 20px;
+
+  .addNewTaskBtnContainer {
+    width: 100%;
+  }
+
+  .taskFormContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.645);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

@@ -1,0 +1,34 @@
+@use "../../../../../../assets/style/index.scss";
+
+.king {
+  cursor: pointer;
+  transition: 0.04s ease-in-out;
+  &:hover {
+    background-color: index.$darkMode_border_color;
+  }
+
+  .link {
+    padding: 20px 10px;
+    text-decoration: none;
+    display: flex;
+
+    .iconContainer {
+      margin-right: 20px;
+      color: rgb(51, 139, 246);
+    }
+
+    .linkNameContainer {
+      color: index.$darkMode_text_color;
+    }
+
+    .numberOfLinkContentContainer {
+      margin-left: auto;
+      color: gray;
+    }
+  }
+}
+
+// style of focused link
+#focusedLink {
+  background-color: index.$darkMode_border_color;
+}

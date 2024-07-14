@@ -1,0 +1,11 @@
+.disabledItem {
+  padding: 20px 10px;
+  display: flex;
+  align-items: center;
+  opacity: 0.4;
+
+  .iconContainer {
+    margin-right: 20px;
+    color: rgb(51, 139, 246);
+  }
+}
