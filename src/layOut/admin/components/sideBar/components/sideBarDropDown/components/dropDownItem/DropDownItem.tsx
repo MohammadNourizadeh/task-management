@@ -4,15 +4,12 @@ import { useState } from 'react'
 import styles from './DropDownItem.module.scss'
 
 type DropDownItemProps = {
-    itemInfo: ItemAmount
-}
-type ItemAmount = [{
-    name: string,
+    itemName: string,
     icon: IconDefinition,
     onAlter: (value: string) => void
-}]
+}
 
-export default function DropDownItem({ itemInfo }: DropDownItemProps) {
+export default function DropDownItem({ itemName, icon, onAlter }: DropDownItemProps) {
 
     // state
     const [isEditing, setIsEditing] = useState<boolean>(false)
@@ -30,32 +27,28 @@ export default function DropDownItem({ itemInfo }: DropDownItemProps) {
 
     return (
         <>
-            {itemInfo.map((item, index) => (
-                <>
-                    {!isEditing ?
-                        <li className={styles.dropDownItem} key={index}>
-                            <span className={styles.iconContainer}>
-                                <FontAwesomeIcon icon={item.icon} />
-                            </span>
-                            <span className={styles.itemNameContainer}>
-                                {item.name}
-                            </span>
-                            <span className={styles.btnContainer}>
-                                <button onClick={() => { editInputValueHandler(item.name) }}>edit</button>
-                            </span>
-                        </li>
-                        :
-                        <li className={styles.dropDownItem}>
-                            <span className={styles.iconContainer}>
-                                <FontAwesomeIcon icon={item.icon} />
-                            </span>
-                            <input type="text" value={inputText} onChange={(e) => { setInputText(e.target.value) }} />
-                            <span className={styles.btnContainer}>
-                                <button onClick={() => { saveInputValueHandler(item.onAlter) }}>save</button>
-                            </span>
-                        </li>}
-                </>
-            ))}
+            {!isEditing ?
+                <li className={styles.dropDownItem}>
+                    <span className={styles.iconContainer}>
+                        <FontAwesomeIcon icon={icon} />
+                    </span>
+                    <span className={styles.itemNameContainer}>
+                        {itemName}
+                    </span>
+                    <span className={styles.btnContainer}>
+                        <button onClick={() => { editInputValueHandler(itemName) }}>edit</button>
+                    </span>
+                </li>
+                :
+                <li className={styles.dropDownItem}>
+                    <span className={styles.iconContainer}>
+                        <FontAwesomeIcon icon={icon} />
+                    </span>
+                    <input type="text" value={inputText} onChange={(e) => { setInputText(e.target.value) }} />
+                    <span className={styles.btnContainer}>
+                        <button onClick={() => { saveInputValueHandler(onAlter) }}>save</button>
+                    </span>
+                </li>}
         </>
     )
 }
