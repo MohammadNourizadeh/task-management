@@ -14,9 +14,9 @@ export default function TaskForm({ onCancel }: TaskFormProps) {
     const dispatch = useDispatch()
 
     // func
-    const addTaskHandler = (e) => {
-        e.preventDefault()
-        const formData = new FormData(e.target);
+    const addTaskHandler = (event) => {
+        event.preventDefault()
+        const formData = new FormData(event.target);
         const { taskName, taskDate, isImportant } = Object.fromEntries(formData)
 
         dispatch(addTask({ taskName, taskDate, isImportant }));
