@@ -1,6 +1,5 @@
 import { faMultiply } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { useRef } from 'react'
 import { useDispatch } from 'react-redux'
 import { addTask } from '../../../../store/slices/tasksInfo/tasksInfo'
 import styles from './TaskForm.module.scss'
@@ -10,19 +9,16 @@ type TaskFormProps = {
 }
 
 export default function TaskForm({ onCancel }: TaskFormProps) {
-    // refHooks
-    const taskNameRef = useRef<HTMLInputElement>()
-    const taskDateRef = useRef<HTMLInputElement>()
-    const isImportantRef = useRef<HTMLInputElement>()
 
     // redux
     const dispatch = useDispatch()
 
     // func
-    const addTaskHandler = () => {
-        const taskName = taskNameRef.current?.value;
-        const taskDate = taskDateRef.current?.value;
-        const isImportant = isImportantRef.current?.value;
+    const addTaskHandler = (e) => {
+        e.preventDefault()
+        const formData = new FormData(e.target);
+        const { taskName, taskDate, isImportant } = Object.fromEntries(formData)
+
         dispatch(addTask({ taskName, taskDate, isImportant }));
         onCancel(false)
     }
@@ -34,15 +30,15 @@ export default function TaskForm({ onCancel }: TaskFormProps) {
         <form className={styles.king} onSubmit={addTaskHandler}>
             <div className={styles.textInputContainer}>
                 <label htmlFor="taskName">enter the task :</label>
-                <input type="text" id='taskName' name='taskName' ref={taskNameRef} />
+                <input type="text" id='taskName' name='taskName' />
             </div>
             <div className={styles.dateInputContainer}>
                 <label htmlFor="taskDate">enter the date of rhe task :</label>
-                <input type="date" id='taskDate' name='taskDate' ref={taskDateRef} />
+                <input type="date" id='taskDate' name='taskDate' />
             </div>
             <div className={styles.selectContainer}>
                 <label htmlFor="isImportant">is the task important ?</label>
-                <select name="isImportant" id="isImportant" ref={isImportantRef}>
+                <select name="isImportant" id="isImportant" >
                     <option value="no">no</option>
                     <option value="yes">yes</option>
                 </select>
