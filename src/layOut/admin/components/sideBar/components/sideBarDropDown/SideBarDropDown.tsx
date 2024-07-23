@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { changeUserName } from "../../../../../../store/slices/userInfo/userInfo"
 import DisabledItem from "../disabledItem/DisabledItem"
 import styles from './SideBarDropDown.module.scss'
-import DropDownEditItem from "./components/dropDownItem/DropDownEditItem"
+import DropDownEditItem from "./components/dropDownEditItem/DropDownEditItem"
 
 type SideBarDropDownProps = {
     disabled?: boolean,
