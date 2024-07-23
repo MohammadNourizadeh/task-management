@@ -37,7 +37,7 @@ export default function SideBarDropDown({ disabled, itemName, itemIcon, iconColo
                     </li>
                     {isDropDownOpen &&
                         <ul className={styles.dropDownContainer}>
-                            <DropDownItem itemName={username} icon={faUserCog} onAlter={(value: string) => { dispatch(changeUserName(value)) }} />
+                            <DropDownItem itemName={'username'} icon={faUserCog} inputValue={username} onAlter={(value: string) => { dispatch(changeUserName(value)) }} />
                         </ul>}
                 </>
                 :

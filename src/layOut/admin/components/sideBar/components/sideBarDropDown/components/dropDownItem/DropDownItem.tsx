@@ -6,23 +6,23 @@ import styles from './DropDownItem.module.scss'
 type DropDownItemProps = {
     itemName: string,
     icon: IconDefinition,
+    inputValue: string,
     onAlter: (value: string) => void
 }
 
-export default function DropDownItem({ itemName, icon, onAlter }: DropDownItemProps) {
+export default function DropDownItem({ itemName, icon, inputValue, onAlter }: DropDownItemProps) {
 
     // state
     const [isEditing, setIsEditing] = useState<boolean>(false)
-    const [inputText, setInputText] = useState<string>('')
+    const [inputText, setInputText] = useState<string>(inputValue)
 
     // func
-    const editInputValueHandler = (presentValue: string) => {
+    const editInputValueHandler = () => {
         setIsEditing(prev => !prev);
-        setInputText(presentValue)
     }
-    const saveInputValueHandler = (changer: (value: string) => void) => {
+    const saveInputValueHandler = () => {
         setIsEditing(prev => !prev);
-        changer(inputText)
+        onAlter(inputText)
     }
 
     return (
@@ -36,7 +36,7 @@ export default function DropDownItem({ itemName, icon, onAlter }: DropDownItemPr
                         {itemName}
                     </span>
                     <span className={styles.btnContainer}>
-                        <button onClick={() => { editInputValueHandler(itemName) }}>edit</button>
+                        <button onClick={editInputValueHandler}>edit</button>
                     </span>
                 </li>
                 :
@@ -46,7 +46,7 @@ export default function DropDownItem({ itemName, icon, onAlter }: DropDownItemPr
                     </span>
                     <input type="text" value={inputText} onChange={(e) => { setInputText(e.target.value) }} />
                     <span className={styles.btnContainer}>
-                        <button onClick={() => { saveInputValueHandler(onAlter) }}>save</button>
+                        <button onClick={saveInputValueHandler}>save</button>
                     </span>
                 </li>}
         </>
