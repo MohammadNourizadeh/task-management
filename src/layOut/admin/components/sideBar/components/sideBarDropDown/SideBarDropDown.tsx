@@ -3,9 +3,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { changeUserName } from "../../../../../../store/slices/userInfo/userInfo"
-import styles from './SideBarDropDown.module.scss'
-import DropDownItem from "./components/dropDownItem/DropDownItem"
 import DisabledItem from "../disabledItem/DisabledItem"
+import styles from './SideBarDropDown.module.scss'
+import DropDownEditItem from "./components/dropDownItem/DropDownEditItem"
 
 type SideBarDropDownProps = {
     disabled?: boolean,
@@ -37,7 +37,7 @@ export default function SideBarDropDown({ disabled, itemName, itemIcon, iconColo
                     </li>
                     {isDropDownOpen &&
                         <ul className={styles.dropDownContainer}>
-                            <DropDownItem itemName={'username'} icon={faUserCog} inputValue={username} onAlter={(value: string) => { dispatch(changeUserName(value)) }} />
+                            <DropDownEditItem itemName={'username'} icon={faUserCog} inputValue={username} onAlter={(value: string) => { dispatch(changeUserName(value)) }} />
                         </ul>}
                 </>
                 :

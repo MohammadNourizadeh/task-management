@@ -1,16 +1,16 @@
 import { IconDefinition } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useState } from 'react'
-import styles from './DropDownItem.module.scss'
+import styles from './DropDownEditItem.module.scss'
 
-type DropDownItemProps = {
+type DropDownEditItemProps = {
     itemName: string,
     icon: IconDefinition,
     inputValue: string,
     onAlter: (value: string) => void
 }
 
-export default function DropDownItem({ itemName, icon, inputValue, onAlter }: DropDownItemProps) {
+export default function DropDownEditItem({ itemName, icon, inputValue, onAlter }: DropDownEditItemProps) {
 
     // state
     const [isEditing, setIsEditing] = useState<boolean>(false)
