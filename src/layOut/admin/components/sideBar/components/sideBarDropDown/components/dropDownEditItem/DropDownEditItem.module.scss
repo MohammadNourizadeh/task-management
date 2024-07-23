@@ -9,6 +9,7 @@
   .iconContainer {
     margin-right: 20px;
     color: index.$darkMode_text_color;
+    width: 10%;
   }
 
   .itemNameContainer {
@@ -33,7 +34,9 @@
     margin-left: auto;
 
     button {
-      padding: 5px 18px;
+      width: 70px;
+      height: 25px;
+      text-align: center;
       border-radius: 10px;
       background-color: index.$green_accepted_color;
       border: 0;

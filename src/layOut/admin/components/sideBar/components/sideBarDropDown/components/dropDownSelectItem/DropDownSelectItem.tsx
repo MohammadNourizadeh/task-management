@@ -18,8 +18,8 @@ export default function DropDownSelectItem({ itemName, icon }: DropDownSelectIte
             </span>
             <span className={styles.selectInputContainer}>
                 <select>
-                    <option value="darkMode">dark mode</option>
-                    <option value="lightMode">light mode</option>
+                    <option value="darkMode">dark</option>
+                    <option value="lightMode">light</option>
                 </select>
             </span>
         </li>

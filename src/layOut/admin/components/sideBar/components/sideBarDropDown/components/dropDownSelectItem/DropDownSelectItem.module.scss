@@ -9,6 +9,7 @@
   .iconContainer {
     margin-right: 20px;
     color: index.$darkMode_text_color;
+    width: 10%;
   }
 
   .itemNameContainer {
@@ -17,5 +18,24 @@
 
   .selectInputContainer {
     margin-left: auto;
+
+    select {
+      width: 70px;
+      height: 25px;
+      text-align: center;
+      border-radius: 10px;
+      background-color: index.$green_accepted_color;
+      border: 0;
+      color: index.$darkMode_text_color;
+      cursor: pointer;
+      transition: 0.05s ease-in-out;
+
+      &:hover {
+        background-color: #238637c9;
+      }
+      &:active {
+        background-color: #238637a5;
+      }
+    }
   }
 }
