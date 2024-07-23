@@ -1,0 +1,21 @@
+@use "../../../../../../../../assets/style/index.scss";
+
+.dropDownItem {
+  padding: 0px 30px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+
+  .iconContainer {
+    margin-right: 20px;
+    color: index.$darkMode_text_color;
+  }
+
+  .itemNameContainer {
+    text-transform: none;
+  }
+
+  .selectInputContainer {
+    margin-left: auto;
+  }
+}
