@@ -1,4 +1,4 @@
-import { faUserCog, IconDefinition } from "@fortawesome/free-solid-svg-icons"
+import { faMoon, faUserCog, IconDefinition } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
@@ -6,6 +6,7 @@ import { changeUserName } from "../../../../../../store/slices/userInfo/userInfo
 import DisabledItem from "../disabledItem/DisabledItem"
 import styles from './SideBarDropDown.module.scss'
 import DropDownEditItem from "./components/dropDownEditItem/DropDownEditItem"
+import DropDownSelectItem from "./components/dropDownSelectItem/DropDownSelectItem"
 
 type SideBarDropDownProps = {
     disabled?: boolean,
@@ -18,6 +19,8 @@ export default function SideBarDropDown({ disabled, itemName, itemIcon, iconColo
     // redux
     const dispatch = useDispatch()
     const username = useSelector(store => store.userInfo.username)
+    const mode = useSelector(store => store.darkAndLightMode.mode)
+
 
 
     // state
@@ -38,6 +41,7 @@ export default function SideBarDropDown({ disabled, itemName, itemIcon, iconColo
                     {isDropDownOpen &&
                         <ul className={styles.dropDownContainer}>
                             <DropDownEditItem itemName={'username'} icon={faUserCog} inputValue={username} onAlter={(value: string) => { dispatch(changeUserName(value)) }} />
+                            <DropDownSelectItem icon={faMoon} itemName={mode} />
                         </ul>}
                 </>
                 :

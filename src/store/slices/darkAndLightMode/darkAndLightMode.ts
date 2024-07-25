@@ -5,7 +5,7 @@ type InitialStateAmount = {
 };
 
 const initialState: InitialStateAmount = {
-  mode: "dark",
+  mode: "darkMode",
 };
 
 const darkAndLightModeSlice = createSlice({
