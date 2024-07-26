@@ -1,8 +1,9 @@
 import { IconDefinition } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import styles from './SideBarLink.module.scss';
 import DisabledItem from "../disabledItem/DisabledItem";
+import styles from './SideBarLink.module.scss';
 
 type SideBarLinkProps = {
     linkName: string,
@@ -17,10 +18,13 @@ type SideBarLinkProps = {
 
 export default function SideBarLink({ linkName, linkIcon, linkAddress, iconColor, disabled, focusedLink, onChooseLink, countOfPageItem }: SideBarLinkProps) {
 
+    // redux
+    const mode = useSelector(store => store.darkAndLightMode.mode)
+
     return (
         <>
             {!disabled ?
-                <li className={styles.king} id={focusedLink === linkName ? styles.focusedLink : ''} onClick={() => { onChooseLink(linkName) }}>
+                <li className={mode === 'darkMode' ? styles.king : styles.lightMode} id={focusedLink === linkName && mode === 'darkMode' ? styles.focusedLink : focusedLink === linkName && mode === 'lightMode' ? styles.lightModeFocusedLink : ''} onClick={() => { onChooseLink(linkName) }}>
                     <Link to={linkAddress} className={styles.link}>
                         <span className={styles.iconContainer}>
                             <FontAwesomeIcon icon={linkIcon} style={{ color: iconColor }} />

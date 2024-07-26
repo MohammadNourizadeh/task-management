@@ -1,4 +1,5 @@
 @use "../../assets/style/index.scss";
+// lightMode
 
 .king {
   height: 100vh;
@@ -25,6 +26,24 @@
       background-color: index.$darkMode_part_bg_color;
       color: index.$darkMode_text_color;
       overflow: auto;
+    }
+  }
+}
+
+#lightMode {
+  .sideBarContainer {
+    border-right: 1px solid index.$lightMode_border_color;
+    background-color: index.$lightMode_part_bg_color;
+    color: index.$lightMode_text_color;
+  }
+  .outletAndHeaderContainer {
+    .headerContainer {
+      color: index.$lightMode_text_color;
+      background-color: index.$lightMode_main_bg_color;
+    }
+    .outletContainer {
+      background-color: index.$lightMode_part_bg_color;
+      color: index.$lightMode_text_color;
     }
   }
 }

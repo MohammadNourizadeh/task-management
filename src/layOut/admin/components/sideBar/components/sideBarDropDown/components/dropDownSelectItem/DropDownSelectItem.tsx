@@ -25,7 +25,7 @@ export default function DropDownSelectItem({ itemName, icon }: DropDownSelectIte
     }
 
     return (
-        <li className={styles.dropDownItem}>
+        <li className={styles.dropDownItem} id={itemName === 'lightMode' ? styles.lightMode : ''}>
             <span className={styles.iconContainer}>
                 <FontAwesomeIcon icon={icon} />
             </span>

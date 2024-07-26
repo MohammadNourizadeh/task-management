@@ -30,7 +30,7 @@ export default function SideBarDropDown({ disabled, itemName, itemIcon, iconColo
         <>
             {!disabled ?
                 <>
-                    <li className={styles.sidebarItem} id={isDropDownOpen ? styles.focused : ''} onClick={() => { setIsDropDownOpen(prev => !prev) }}>
+                    <li className={mode === 'darkMode' ? styles.sidebarItem : styles.lightModeSidebarItem} id={isDropDownOpen && mode === 'darkMode' ? styles.focused : isDropDownOpen && mode === 'lightMode' ? styles.lightModeFocused : ''} onClick={() => { setIsDropDownOpen(prev => !prev) }}>
                         <span className={styles.iconContainer}>
                             <FontAwesomeIcon icon={itemIcon} style={{ color: iconColor }} />
                         </span>
@@ -39,7 +39,7 @@ export default function SideBarDropDown({ disabled, itemName, itemIcon, iconColo
                         </span>
                     </li>
                     {isDropDownOpen &&
-                        <ul className={styles.dropDownContainer}>
+                        <ul className={mode === 'darkMode' ? styles.dropDownContainer : styles.lightModeDropDownContainer}>
                             <DropDownEditItem itemName={'username'} icon={faUserCog} inputValue={username} onAlter={(value: string) => { dispatch(changeUserName(value)) }} />
                             <DropDownSelectItem icon={faMoon} itemName={mode} />
                         </ul>}

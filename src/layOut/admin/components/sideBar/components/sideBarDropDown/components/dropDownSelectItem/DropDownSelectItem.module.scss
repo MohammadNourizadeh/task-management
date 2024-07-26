@@ -39,3 +39,10 @@
     }
   }
 }
+
+// light mode style
+#lightMode {
+  .iconContainer {
+    color: index.$lightMode_text_color;
+  }
+}

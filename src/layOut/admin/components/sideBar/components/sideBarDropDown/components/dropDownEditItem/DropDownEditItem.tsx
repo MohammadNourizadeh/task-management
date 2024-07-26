@@ -2,6 +2,7 @@ import { IconDefinition } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useState } from 'react'
 import styles from './DropDownEditItem.module.scss'
+import { useSelector } from 'react-redux'
 
 type DropDownEditItemProps = {
     itemName: string,
@@ -11,6 +12,8 @@ type DropDownEditItemProps = {
 }
 
 export default function DropDownEditItem({ itemName, icon, inputValue, onAlter }: DropDownEditItemProps) {
+    // redux
+    const mode = useSelector(store => store.darkAndLightMode.mode)
 
     // state
     const [isEditing, setIsEditing] = useState<boolean>(false)
@@ -28,7 +31,7 @@ export default function DropDownEditItem({ itemName, icon, inputValue, onAlter }
     return (
         <>
             {!isEditing ?
-                <li className={styles.dropDownItem}>
+                <li className={styles.dropDownItem} id={mode === 'lightMode' ? styles.lightMode : ''}>
                     <span className={styles.iconContainer}>
                         <FontAwesomeIcon icon={icon} />
                     </span>
@@ -40,7 +43,7 @@ export default function DropDownEditItem({ itemName, icon, inputValue, onAlter }
                     </span>
                 </li>
                 :
-                <li className={styles.dropDownItem}>
+                <li className={styles.dropDownItem} id={mode === 'lightMode' ? styles.lightMode : ''}>
                     <span className={styles.iconContainer}>
                         <FontAwesomeIcon icon={icon} />
                     </span>

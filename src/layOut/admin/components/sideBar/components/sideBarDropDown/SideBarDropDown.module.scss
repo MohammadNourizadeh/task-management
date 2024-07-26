@@ -29,3 +29,34 @@
 #focused {
   background-color: index.$darkMode_border_color;
 }
+
+// style of light mode
+.lightModeSidebarItem {
+  cursor: pointer;
+  padding: 20px 10px;
+  text-decoration: none;
+  transition: 0.04s ease-in-out;
+  &:hover {
+    background-color: index.$lightMode_border_color;
+  }
+
+  .iconContainer {
+    margin-right: 20px;
+    color: rgb(51, 139, 246);
+  }
+
+  .itemNameContainer {
+    color: index.$lightMode_text_color;
+  }
+}
+
+.lightModeDropDownContainer {
+  background-color: index.$lightMode_border_color;
+  color: index.$lightMode_text_color;
+  list-style: none;
+}
+
+// style of focused item
+#lightModeFocused {
+  background-color: index.$lightMode_border_color;
+}

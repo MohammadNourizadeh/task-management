@@ -53,3 +53,16 @@
     }
   }
 }
+
+// light mode style
+#lightMode {
+  .iconContainer {
+    color: index.$lightMode_text_color;
+  }
+
+  input[type="text"] {
+    border: 2px solid index.$lightMode_border_color;
+    background-color: index.$lightMode_part_bg_color;
+    color: index.$lightMode_text_color;
+  }
+}

@@ -17,3 +17,13 @@
     font-size: 1.5rem;
   }
 }
+
+#lightMode {
+  .iconContainer {
+    color: index.$lightMode_text_color;
+  }
+
+  .userName {
+    color: index.$lightMode_text_color;
+  }
+}

@@ -36,3 +36,15 @@
     }
   }
 }
+
+#lightMode {
+  input {
+    border: 2px solid index.$lightMode_border_color;
+    background-color: index.$lightMode_part_bg_color;
+    color: index.$lightMode_text_color;
+  }
+
+  button {
+    color: index.$lightMode_text_color;
+  }
+}

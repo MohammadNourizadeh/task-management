@@ -8,7 +8,7 @@ $darkMode_text_color: rgb(255, 255, 255);
 $lightMode_main_bg_color: #d5d9de;
 $lightMode_part_bg_color: #e8ecf1;
 $lightMode_border_color: #c1c6ca;
-$lightMode_text_black: black;
+$lightMode_text_color: black;
 
 $green_accepted_color: #238636;
 $red_error_color: rgb(204, 6, 6);
@@ -17,6 +17,6 @@ $red_error_color: rgb(204, 6, 6);
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family:  sans-serif;
+  font-family: sans-serif;
   text-transform: capitalize;
 }
