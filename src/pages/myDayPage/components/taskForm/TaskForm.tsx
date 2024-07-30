@@ -1,6 +1,6 @@
 import { faMultiply } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { addTask } from '../../../../store/slices/tasksInfo/tasksInfo'
 import styles from './TaskForm.module.scss'
 
@@ -11,6 +11,7 @@ type TaskFormProps = {
 export default function TaskForm({ onCancel }: TaskFormProps) {
 
     // redux
+    const mode = useSelector(store => store.darkAndLightMode.mode)
     const dispatch = useDispatch()
 
     // func
@@ -27,7 +28,7 @@ export default function TaskForm({ onCancel }: TaskFormProps) {
 
 
     return (
-        <form className={styles.king} onSubmit={addTaskHandler}>
+        <form className={styles.king} id={mode === 'lightMode' ? styles.lightMode : ''} onSubmit={addTaskHandler}>
             <div className={styles.textInputContainer}>
                 <label htmlFor="taskName">enter the task :</label>
                 <input type="text" id='taskName' name='taskName' />

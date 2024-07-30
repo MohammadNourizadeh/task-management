@@ -103,3 +103,32 @@
     }
   }
 }
+
+// dark mode style
+#lightMode {
+  background-color: index.$lightMode_main_bg_color;
+  border: 1px solid index.$lightMode_border_color;
+
+  .textInputContainer,
+  .dateInputContainer {
+    input {
+      background-color: index.$lightMode_part_bg_color;
+      border: 1px solid index.$lightMode_border_color;
+      color: index.$lightMode_text_color;
+    }
+  }
+
+  .selectContainer {
+    select {
+      background-color: index.$lightMode_part_bg_color;
+      border: 1px solid index.$lightMode_border_color;
+      color: index.$lightMode_text_color;
+    }
+  }
+
+  .btnContainer {
+    button {
+      color: index.$darkMode_text_color;
+    }
+  }
+}
