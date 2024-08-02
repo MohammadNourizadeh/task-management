@@ -1,0 +1,27 @@
+@media screen and (max-width: 490px) {
+  .king {
+    .sideBarContainer {
+      position: absolute;
+      display: none;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      z-index: 999;
+      opacity: 0.96;
+    }
+    #openSideBarContainer {
+      display: block;
+    }
+
+    .outletAndHeaderContainer {
+      width: 100%;
+
+      .headerContainer {
+        .sideBarBtn {
+          display: block;
+        }
+      }
+    }
+  }
+}

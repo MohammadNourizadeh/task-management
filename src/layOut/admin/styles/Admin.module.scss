@@ -4,6 +4,7 @@
   position: relative;
   height: 100vh;
   display: flex;
+  overflow: hidden;
 
   .sideBarContainer {
     border-right: 1px solid index.$darkMode_border_color;
@@ -74,3 +75,4 @@
 
 @import "./mdAdminScreenSize";
 @import "./smAdminScreenSize";
+@import "./xSmAdminScreenSize";
