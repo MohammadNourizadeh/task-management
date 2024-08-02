@@ -1,0 +1,15 @@
+@use "../../../../../assets/style/index.scss";
+
+.king {
+  position: relative;
+
+  .sideBarItemContainer {
+    user-select: none;
+  }
+
+  .closeBtnContainer {
+    display: none;
+  }
+}
+
+@import "./smSideBarScreenSize";

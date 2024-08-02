@@ -1,16 +1,18 @@
 import { faCalendarAlt, faCog, faMessage, faStar, faSun, faTasks } from '@fortawesome/free-solid-svg-icons'
 import { useState } from 'react'
 import { useSelector } from 'react-redux'
-import styles from './SideBar.module.scss'
+import styles from './styles/SideBar.module.scss'
 import SideBarDropDown from './components/sideBarDropDown/SideBarDropDown'
 import SideBarLink from './components/sideBarLink/SideBarLink'
 import UserInfoItem from './components/userInfoItem/UserInfoItem'
+import CloseBtn from '../../../../components/closeBtn/CloseBtn'
 
 type SideBarProps = {
   pageNameSetter: (value: string) => void
+  onClose: (value: boolean) => void
 }
 
-export default function SideBar({ pageNameSetter }: SideBarProps) {
+export default function SideBar({ pageNameSetter, onClose }: SideBarProps) {
   // redux
   const countOfMyDayPageItem = useSelector((store) => store.tasksInfo.tasks.length)
   const countOfImportantTaskPageItem = useSelector((store) => store.tasksInfo.importantTasks.length)
@@ -81,6 +83,10 @@ export default function SideBar({ pageNameSetter }: SideBarProps) {
           itemName='setting'
         />
       </ul>
+
+      <div className={styles.closeBtnContainer}>
+        <CloseBtn onClose={onClose} />
+      </div>
     </div>
   )
 }

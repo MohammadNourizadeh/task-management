@@ -34,7 +34,7 @@ export default function MyDayPage() {
             </div>
             {isAddingTask &&
                 <div className={styles.taskFormContainer}>
-                    <TaskForm onCancel={(value) => { setIsAddingTask(value) }} />
+                    <TaskForm onClose={(value) => { setIsAddingTask(value) }} />
                 </div>}
         </div>
     )

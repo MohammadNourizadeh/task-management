@@ -1,14 +1,13 @@
-import { faMultiply } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useDispatch, useSelector } from 'react-redux'
+import CloseBtn from '../../../../components/closeBtn/CloseBtn'
 import { addTask } from '../../../../store/slices/tasksInfo/tasksInfo'
 import styles from './TaskForm.module.scss'
 
 type TaskFormProps = {
-    onCancel: (value: boolean) => void
+    onClose: (value: boolean) => void
 }
 
-export default function TaskForm({ onCancel }: TaskFormProps) {
+export default function TaskForm({ onClose }: TaskFormProps) {
 
     // redux
     const mode = useSelector(store => store.darkAndLightMode.mode)
@@ -21,7 +20,7 @@ export default function TaskForm({ onCancel }: TaskFormProps) {
         const { taskName, taskDate, isImportant } = Object.fromEntries(formData)
 
         dispatch(addTask({ taskName, taskDate, isImportant }));
-        onCancel(false)
+        onClose(false)
     }
 
 
@@ -51,9 +50,10 @@ export default function TaskForm({ onCancel }: TaskFormProps) {
                 <button type='submit'>add a task</button>
             </div>
 
-            <button className={styles.multiplyIconContainer} onClick={() => { onCancel(false) }}>
-                <FontAwesomeIcon icon={faMultiply} />
-            </button>
+            <div className={styles.closeBtnContainer}>
+                <CloseBtn onClose={onClose} />
+            </div>
+
         </form>
     )
 }

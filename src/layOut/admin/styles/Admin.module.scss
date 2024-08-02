@@ -1,7 +1,7 @@
-@use "../../assets/style/index.scss";
+@use "../../../assets/style/index.scss";
 // lightMode
-
 .king {
+  position: relative;
   height: 100vh;
   display: flex;
 
@@ -20,6 +20,21 @@
       background-color: index.$darkMode_main_bg_color;
       height: 35%;
       padding: 20px;
+
+      .sideBarBtn {
+        display: none;
+        position: absolute;
+        font-size: 1.3rem;
+        background-color: rgba(0, 0, 0, 0);
+        color: index.$darkMode_text_color;
+        border: 0;
+        cursor: pointer;
+        transition: 0.1s ease-in-out;
+
+        &:hover {
+          color: rgba(255, 255, 255, 0.619);
+        }
+      }
     }
     .outletContainer {
       height: 65%;
@@ -41,6 +56,14 @@
     .headerContainer {
       color: index.$lightMode_text_color;
       background-color: index.$lightMode_main_bg_color;
+
+      .sideBarBtn {
+        color: index.$lightMode_text_color;
+
+        &:hover {
+          color: rgba(0, 0, 0, 0.619);
+        }
+      }
     }
     .outletContainer {
       background-color: index.$lightMode_part_bg_color;
@@ -48,3 +71,6 @@
     }
   }
 }
+
+@import "./mdAdminScreenSize";
+@import "./smAdminScreenSize";

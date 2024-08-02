@@ -1,0 +1,12 @@
+@media screen and (max-width: 860px) {
+  .king {
+    .closeBtnContainer {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 10px;
+      direction: rtl;
+    }
+  }
+}

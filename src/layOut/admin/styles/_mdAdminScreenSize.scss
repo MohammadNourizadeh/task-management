@@ -1,0 +1,20 @@
+@media screen and (max-width: 1230px) {
+  .king {
+    .sideBarContainer {
+      width: 27%;
+    }
+    .outletAndHeaderContainer {
+      width: calc(100% - 27%);
+    }
+  }
+}
+@media screen and (max-width: 945px) {
+  .king {
+    .sideBarContainer {
+      width: 33%;
+    }
+    .outletAndHeaderContainer {
+      width: calc(100% - 33%);
+    }
+  }
+}
