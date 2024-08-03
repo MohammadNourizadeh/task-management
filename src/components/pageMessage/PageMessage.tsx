@@ -1,7 +1,7 @@
 import { IconDefinition } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useSelector } from 'react-redux'
-import styles from './PageMessage.module.scss'
+import styles from './styles/PageMessage.module.scss'
 
 type ImportantTaskPageProps = {
     message: string,
