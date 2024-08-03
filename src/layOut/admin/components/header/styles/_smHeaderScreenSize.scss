@@ -1,0 +1,30 @@
+@media screen and (max-width: 860px) {
+  .king {
+    .headerInfoContainer {
+      .searchInputContainer {
+        width: 250px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 870px) {
+  .king {
+    .headerInfoContainer {
+      .searchInputContainer {
+        width: 200px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .king {
+    font-size: 9px;
+    .headerInfoContainer {
+      .searchInputContainer {
+        width: 140px;
+      }
+    }
+  }
+}

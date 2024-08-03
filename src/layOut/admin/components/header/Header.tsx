@@ -1,4 +1,4 @@
-import styles from './Header.module.scss'
+import styles from './styles/Header.module.scss'
 import MyDate from './components/myDate/MyDate'
 import SearchInput from './components/searchInput/SearchInput'
 
