@@ -2,6 +2,7 @@ import { faMoon, faUserCog, IconDefinition } from "@fortawesome/free-solid-svg-i
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
+import { changeMode } from "../../../../../../store/slices/darkAndLightMode/darkAndLightMode"
 import { changeUserName } from "../../../../../../store/slices/userInfo/userInfo"
 import DisabledItem from "../disabledItem/DisabledItem"
 import styles from './SideBarDropDown.module.scss'
@@ -41,7 +42,7 @@ export default function SideBarDropDown({ disabled, itemName, itemIcon, iconColo
                     {isDropDownOpen &&
                         <ul className={mode === 'darkMode' ? styles.dropDownContainer : styles.lightModeDropDownContainer}>
                             <DropDownEditItem itemName={'username'} icon={faUserCog} inputValue={username} onAlter={(value: string) => { dispatch(changeUserName(value)) }} />
-                            <DropDownSelectItem icon={faMoon} itemName={mode} />
+                            <DropDownSelectItem icon={faMoon} selectFunc={(val) => { dispatch(changeMode(val)) }} selectOptions={[{ val: 'darkMode', name: 'dark' }, { val: 'lightMode', name: 'light' }]} itemName={mode} />
                         </ul>}
                 </>
                 :

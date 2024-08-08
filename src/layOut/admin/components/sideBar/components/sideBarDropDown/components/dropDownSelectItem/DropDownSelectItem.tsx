@@ -1,27 +1,24 @@
 import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useRef } from 'react';
-import { useDispatch } from 'react-redux';
-import { changeMode } from '../../../../../../../../store/slices/darkAndLightMode/darkAndLightMode';
 import styles from './DropDownSelectItem.module.scss';
 
 type DropDownSelectItemProps = {
     itemName: string;
-    icon: IconDefinition
+    selectFunc: (val: string) => void;
+    selectOptions: object[];
+    icon: IconDefinition;
 }
 
-export default function DropDownSelectItem({ itemName, icon }: DropDownSelectItemProps) {
-    // redux
-    const dispatch = useDispatch()
+export default function DropDownSelectItem({ itemName, selectFunc, selectOptions, icon }: DropDownSelectItemProps) {
 
     // ref hooks
-    const darkAndLightModeRef = useRef()
+    const selectInputRef = useRef()
 
     // func
     const darkAndLightModeHandler = () => {
-        const mode = darkAndLightModeRef.current.value;
-        dispatch(changeMode(mode))
-
+        const selectInputVal = selectInputRef.current.value;
+        selectFunc(selectInputVal)
     }
 
     return (
@@ -33,9 +30,10 @@ export default function DropDownSelectItem({ itemName, icon }: DropDownSelectIte
                 {itemName}
             </span>
             <span className={styles.selectInputContainer}>
-                <select ref={darkAndLightModeRef} onChange={darkAndLightModeHandler}>
-                    <option value="darkMode">dark</option>
-                    <option value="lightMode">light</option>
+                <select ref={selectInputRef} onChange={darkAndLightModeHandler}>
+                    {selectOptions.map(option => (
+                        <option value={option.val}>{option.name}</option>
+                    ))}
                 </select>
             </span>
         </li>
