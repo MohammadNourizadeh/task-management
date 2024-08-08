@@ -16,7 +16,7 @@ export default function DropDownSelectItem({ itemName, selectFunc, selectOptions
     const selectInputRef = useRef()
 
     // func
-    const darkAndLightModeHandler = () => {
+    const selectOnChangeFunc = () => {
         const selectInputVal = selectInputRef.current.value;
         selectFunc(selectInputVal)
     }
@@ -30,7 +30,7 @@ export default function DropDownSelectItem({ itemName, selectFunc, selectOptions
                 {itemName}
             </span>
             <span className={styles.selectInputContainer}>
-                <select ref={selectInputRef} onChange={darkAndLightModeHandler}>
+                <select ref={selectInputRef} onChange={selectOnChangeFunc}>
                     {selectOptions.map(option => (
                         <option value={option.val}>{option.name}</option>
                     ))}
