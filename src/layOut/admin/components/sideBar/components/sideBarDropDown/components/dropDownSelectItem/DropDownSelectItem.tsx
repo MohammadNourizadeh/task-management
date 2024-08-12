@@ -6,9 +6,15 @@ import styles from './DropDownSelectItem.module.scss';
 type DropDownSelectItemProps = {
     itemName: string;
     selectFunc: (val: string) => void;
-    selectOptions: object[];
+    selectOptions: SelectOptionsType[];
     icon: IconDefinition;
 }
+
+type SelectOptionsType = {
+    val: string;
+    name: string;
+}
+
 
 export default function DropDownSelectItem({ itemName, selectFunc, selectOptions, icon }: DropDownSelectItemProps) {
 
