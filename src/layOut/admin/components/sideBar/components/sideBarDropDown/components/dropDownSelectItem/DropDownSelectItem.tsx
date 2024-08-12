@@ -37,8 +37,8 @@ export default function DropDownSelectItem({ itemName, selectFunc, selectOptions
             </span>
             <span className={styles.selectInputContainer}>
                 <select ref={selectInputRef} onChange={selectOnChangeFunc}>
-                    {selectOptions.map(option => (
-                        <option value={option.val}>{option.name}</option>
+                    {selectOptions.map((option, index) => (
+                        <option value={option.val} key={index}>{option.name}</option>
                     ))}
                 </select>
             </span>
