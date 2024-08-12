@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useSelector } from 'react-redux'
-import AddTaskBtn from './components/addTaskBtn/AddTaskBtn'
+import AddBtn from '../../components/addBtn/AddBtn'
 import TaskForm from './components/taskForm/TaskForm'
 import TaskInput from './components/taskInput/TaskInput'
 import styles from './MyDayPage.module.scss'
@@ -30,7 +30,7 @@ export default function MyDayPage() {
                 ))}
             </div>
             <div className={styles.addNewTaskBtnContainer}>
-                <AddTaskBtn onAdd={(value) => { setIsAddingTask(value) }} />
+                <AddBtn btnName='add new task' onAdd={(value) => { setIsAddingTask(value) }} />
             </div>
             {isAddingTask &&
                 <div className={styles.taskFormContainer}>
