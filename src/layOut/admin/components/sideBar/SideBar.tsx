@@ -1,11 +1,11 @@
-import { faCalendarAlt, faCog, faMessage, faStar, faSun, faTasks } from '@fortawesome/free-solid-svg-icons'
+import { faCalendarAlt, faCog, faNoteSticky, faStar, faSun, faTasks } from '@fortawesome/free-solid-svg-icons'
 import { useState } from 'react'
 import { useSelector } from 'react-redux'
-import styles from './styles/SideBar.module.scss'
+import CloseBtn from '../../../../components/closeBtn/CloseBtn'
 import SideBarDropDown from './components/sideBarDropDown/SideBarDropDown'
 import SideBarLink from './components/sideBarLink/SideBarLink'
 import UserInfoItem from './components/userInfoItem/UserInfoItem'
-import CloseBtn from '../../../../components/closeBtn/CloseBtn'
+import styles from './styles/SideBar.module.scss'
 
 type SideBarProps = {
   pageNameSetter: (value: string) => void
@@ -62,11 +62,10 @@ export default function SideBar({ pageNameSetter, onClose }: SideBarProps) {
           onChooseLink={choosedLinkHandler}
         />
         <SideBarLink
-          linkName='message'
-          linkIcon={faMessage}
-          linkAddress='/admin/my-day'
+          linkName='notes'
+          linkIcon={faNoteSticky}
+          linkAddress='/admin/note'
           iconColor='rgb(91, 246, 77)'
-          disabled
           focusedLink={focusedItem}
           onChooseLink={choosedLinkHandler}
         />

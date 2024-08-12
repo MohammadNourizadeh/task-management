@@ -3,6 +3,7 @@ import Admin from "./layOut/admin/Admin"
 import CheckedTaskPage from "./pages/checkedTaskpage/CheckedTaskPage"
 import ImportantTaskPage from "./pages/importantTaskPage/ImportantTaskPage"
 import MyDayPage from "./pages/myDayPage/MyDayPage"
+import NotePage from "./pages/notePage/NotePage"
 
 function App() {
 
@@ -13,6 +14,7 @@ function App() {
         <Route path="/admin" element={<Admin />} >
           <Route path="/admin/my-day" element={<MyDayPage />} />
           <Route path="/admin/important" element={<ImportantTaskPage />} />
+          <Route path="/admin/note" element={<NotePage />} />
           <Route path="/admin/checked" element={<CheckedTaskPage />} />
         </Route>
       </Routes>
